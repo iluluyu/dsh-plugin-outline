@@ -12,17 +12,12 @@ One dash per user turn in a 34px frosted pill (`blur(5px)`); the dash at your re
 
 每轮用户消息一条横线，置于 34px 毛玻璃胶囊内；当前阅读位置品牌蓝高亮、实时跟随滚动。悬停展开 240px 大纲面板，点击条目跳转；开合即时响应，与官方一致。明暗主题跟随官方信号。
 
-**Light — expanded**
+| Theme \ State | Collapsed | Expanded |
+|:---|:---:|:---:|
+| **Light** | [![light collapsed](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light-seal.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light-seal.png) | [![light expanded](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light-open.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light-open.png) |
+| **Dark** | [![dark collapsed](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark-seal.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark-seal.png) | [![dark expanded](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark-open.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark-open.png) |
 
-![light demo](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light.png)
-
-**Dark — expanded**
-
-![dark demo](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark.png)
-
-**Collapsed — the dash pill at rest**
-
-![collapsed pill](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-seal.png)
+*2×2 grid: every theme × state, from a real dsh web session. Click any thumbnail to view full-size. 2×2 矩阵：每个主题 × 每个状态，均来自真实 dsh web 会话；点击缩略图可查看原图。*
 
 ## Install
 
