@@ -1,0 +1,33 @@
+{
+  "name": "dsh-plugin-outline",
+  "version": "0.1.0",
+  "description": "ChatGPT-style right-edge quick navigation for dsh web: one dash per user turn, hover to expand an outline panel, click to jump",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "cordis.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=1.0.0",
+    "react": ">=18.0.0"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness"
+  ],
+  "license": "MIT"
+}
