@@ -14,10 +14,10 @@ One dash per user turn in a 34px frosted pill (`blur(5px)`); the dash at your re
 
 | Theme \ State | Collapsed | Expanded |
 |:---|:---:|:---:|
-| **Light** | [![light collapsed](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light-seal.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light-seal.png) | [![light expanded](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light-open.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light-open.png) |
-| **Dark** | [![dark collapsed](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark-seal.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark-seal.png) | [![dark expanded](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark-open.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark-open.png) |
+| **Light** | [![light collapsed](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/zoom-demo-light-seal.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light-seal.png) | [![light expanded](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/zoom-demo-light-open.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light-open.png) |
+| **Dark** | [![dark collapsed](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/zoom-demo-dark-seal.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark-seal.png) | [![dark expanded](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/zoom-demo-dark-open.png)](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark-open.png) |
 
-*2×2 grid: every theme × state, from a real dsh web session. Click any thumbnail to view full-size. 2×2 矩阵：每个主题 × 每个状态，均来自真实 dsh web 会话；点击缩略图可查看原图。*
+*2×2 grid (theme × state) from a real dsh web session; thumbnails are zoomed rail close-ups, click through for the full window. 2×2 矩阵（主题 × 状态）均来自真实 dsh web 会话；缩略图为轨道局部放大，点击可查看完整窗口截图。*
 
 ## Install
 
