@@ -12,13 +12,17 @@ One dash per user turn in a 34px frosted pill (`blur(5px)`); the dash at your re
 
 每轮用户消息一条横线，置于 34px 毛玻璃胶囊内；当前阅读位置品牌蓝高亮、实时跟随滚动。悬停展开 240px 大纲面板，点击条目跳转；开合即时响应，与官方一致。明暗主题跟随官方信号。
 
-**Light — panel expanded**
+**Light — expanded**
 
 ![light demo](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light.png)
 
-**Dark — collapsed dash pill**
+**Dark — expanded**
 
 ![dark demo](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark.png)
+
+**Collapsed — the dash pill at rest**
+
+![collapsed pill](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-seal.png)
 
 ## Install
 
