@@ -1,14 +1,14 @@
 # dsh-plugin-outline
 
-ChatGPT-style right-edge quick navigation for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh) web — one dash per user turn, reading position highlighted, hover to expand an outline panel, click to jump.
+Right-edge turn navigation for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh) web — a pixel-faithful reimplementation of chat.deepseek.com's own scroll-nav: one dash per user turn in a frosted pill, hover to expand an outline panel, click to jump.
 
-为 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（dsh）web 端提供的 ChatGPT 式右侧快速导航——每轮用户消息一条横线，实时高亮阅读位置，悬停展开大纲面板，点击跳转。
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（dsh）web 端右侧轮次导航——逐像素复刻 chat.deepseek.com 官网自带的 scroll-nav：毛玻璃胶囊内每轮一条横线，悬停展开大纲面板，点击跳转。
 
 | Light | Dark |
 |:---:|:---:|
 | ![light demo](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light.png) | ![dark demo](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark.png) |
 
-*Both shots are the real 0.2.1 artifact running on chat.deepseek.com's live share page — the plugin rail overlays exactly where the site's own scroll-nav sits (pixel-verified: same rect, tokens and transitions). 两图均为 0.2.1 真实产物运行在 chat.deepseek.com 线上分享页——插件导航与官网自带 scroll-nav 位置完全重合（几何、token、动效均逐像素验证）。*
+*The plugin running inside dsh web (virtual conversation). The rail reproduces the official site component's geometry, tokens and motion exactly. 插件运行于 dsh web 界面（虚拟对话）。导航与官网组件的几何、token、动效完全一致。*
 
 ---
 
@@ -16,9 +16,9 @@ ChatGPT-style right-edge quick navigation for [DeepSeek Harness](https://github.
 
 ### Features
 
-- **One dash per user turn** inside a 34px frosted pill pinned at the right edge (`right:16px`, vertically centered) — a faithful reimplementation of chat.deepseek.com's own scroll-nav: 8×2 rounded dashes at a 30px pitch, the active one colored brand blue and scaled 1.5×.
-- **Hover or click** the pill to expand the outline panel (240px, `bg-layer-1` + `shadow-lv3`, radius 16); snippets (13px/20px, no index numbers) fade in next to their dashes; click a row to smooth-scroll that turn into view.
-- **Pixel-faithful theming**: every color, font, radius, shadow and motion curve is taken from chat.deepseek.com's own design tokens (`--dsw-alias-*` / `--ds-*`), resolved live from the host page with official fallbacks — light and dark (frosted pill `rgba(255,255,255,.8)` / `rgba(21,21,23,.6)`, both `blur(5px)`).
+- **Official scroll-nav, replicated**: a fixed 34px frosted pill (`blur(5px)`) at `right:16px` holds one 8×2px dash per user turn at a 30px pitch; the dash at your reading position lights up in DeepSeek brand blue and scales 1.5×, tracking scroll live.
+- **Hover to expand**: the same DOM expands into a 240px outline panel (`bg-layer-1` + `shadow-lv3`, radius 16) with snippets (13px/20px, no index numbers) fading in; click a row to smooth-scroll that turn into view. Open/close are immediate on pointer enter/leave, exactly like the site.
+- **Pixel-faithful theming**: every color, font, radius, shadow and motion curve comes from the official design tokens (`--dsw-alias-*` / `--ds-*`), resolved live from the host page with official fallbacks — light and dark.
 - **Official theme signal**: follows `body[data-ds-dark-theme]` (the attribute dsh's ThemePresenter and DeepSeek's site both use), with a luminance fallback for older hosts.
 - Auto-hides below 1024px viewport width, like the official nav. `Esc` / outside-click closes; double-click the pill to pin.
 
@@ -46,7 +46,7 @@ Turn discovery is DOM-based (`[data-conversation-scroll]`, `[data-chat-flow-kind
 
 ### Design parity
 
-The component reimplements the site's scroll-nav (`_189b4a0` in the production stylesheet) part for part: the fixed 34px rail at `right:16px`, the frosted `blur(5px)` pill, 8×2px dashes (radius 4, `border-l4`, active `brand-text` ×1.5), the transparent→`bg-layer-1` panel with `shadow-lv3` and 16px radius, 30px rows with right-aligned 13px/20px snippets, immediate hover-open/leave-close, scroll fade masks, and the `0.2s cubic-bezier(.4,0,.2,1)` motion. Verified three ways: a computed-style parity fixture (`test/parity.html`), live side-by-side injection against the official component (identical geometry), and real-pointer interaction tests. See `docs/theme-plan.md` for planned opt-in glass variants (frosted / liquid).
+The component reimplements the site's scroll-nav (`_189b4a0` in the production stylesheet) part for part: the fixed 34px rail at `right:16px`, the frosted `blur(5px)` pill, 8×2px dashes (radius 4, `border-l4`, active `brand-text` ×1.5), the transparent→`bg-layer-1` panel with `shadow-lv3` and 16px radius, 30px rows with right-aligned 13px/20px snippets, immediate hover-open/leave-close, scroll fade masks, and the `0.2s cubic-bezier(.4,0,.2,1)` motion. Verified three ways: a computed-style parity fixture (`test/parity.html`), live side-by-side injection against the official component on chat.deepseek.com (identical geometry), and real-pointer interaction tests.
 
 ### Development
 
@@ -55,7 +55,7 @@ node --check lib/client.js          # syntax gate (zero-build)
 python3 test/make-parity.py         # regenerate test/parity.html from CSS
 ```
 
-`test/parity.html` asserts computed styles in four cards (light/dark × fallback/host-tokens) against the official values.
+`test/parity.html` asserts computed styles in four cards (light/dark × collapsed/open) against the official values.
 
 ---
 
@@ -63,9 +63,9 @@ python3 test/make-parity.py         # regenerate test/parity.html from CSS
 
 ### 功能
 
-- 右缘 34px 毛玻璃胶囊（`right:16px` 垂直居中）内**每轮用户消息一条 8×2 小横线**，30px 节奏——逐件复刻 chat.deepseek.com 自带的 scroll-nav；当前阅读位置的横线以品牌蓝高亮并放大 1.5 倍，跟随滚动实时更新。
-- 悬停或点击胶囊**展开 240px 大纲面板**（`bg-layer-1` + `shadow-lv3`、圆角 16），摘要（13px/20px，无序号）在横线旁淡入；点击条目平滑滚动到对应消息。
-- **像素级主题对齐**：所有颜色、字体、圆角、阴影、动效曲线均取自官网设计 token（`--dsw-alias-*` / `--ds-*`），优先实时读取宿主页面变量、官方实测值兜底；胶囊明 `rgba(255,255,255,.8)` / 暗 `rgba(21,21,23,.6)`，均 `blur(5px)`。
+- **复刻官网 scroll-nav**：右缘 34px 毛玻璃胶囊（`blur(5px)`，`right:16px`）内每轮用户消息一条 8×2px 横线、30px 节奏；当前阅读位置的横线以品牌蓝高亮并放大 1.5 倍，跟随滚动实时更新。
+- **悬停展开**：同一 DOM 展开为 240px 大纲面板（`bg-layer-1` + `shadow-lv3`、圆角 16），摘要（13px/20px，无序号）淡入；点击条目平滑滚动到对应消息。开合即时响应指针进出，与官网一致。
+- **像素级主题对齐**：颜色、字体、圆角、阴影、动效曲线全部取自官方设计 token（`--dsw-alias-*` / `--ds-*`），优先实时读取宿主变量、官方实测值兜底——明暗双主题一致。
 - **官方主题信号**：跟随 `body[data-ds-dark-theme]`（dsh ThemePresenter 与官网同款属性）切换，旧宿主自动回退亮度探测。
 - 视口 <1024px 自动隐藏（与官方一致）；`Esc` / 点击外部关闭；双击胶囊固定。
 
@@ -93,7 +93,7 @@ dsh plugin --profile web add github:iluluyu/dsh-plugin-outline
 
 ### 设计对齐
 
-组件逐件复刻官网 scroll-nav（生产样式表中的 `_189b4a0`）：固定 34px 宽轨道（`right:16px`）、`blur(5px)` 毛玻璃胶囊、8×2px 横线（圆角 4、`border-l4` 色、激活 `brand-text` ×1.5）、透明→`bg-layer-1` 面板（`shadow-lv3`、圆角 16）、30px 行高右对齐 13px/20px 摘要、悬停即开/离开即关、滚动渐隐遮罩、`0.2s cubic-bezier(.4,0,.2,1)` 动效。三方验证：计算样式对齐固件（`test/parity.html`）、线上与官方组件并排注入（几何完全重合）、真实指针交互测试。可选玻璃变体（毛玻璃/液态玻璃）见 `docs/theme-plan.md`。
+组件逐件复刻官网 scroll-nav（生产样式表中的 `_189b4a0`）：固定 34px 宽轨道（`right:16px`）、`blur(5px)` 毛玻璃胶囊、8×2px 横线（圆角 4、`border-l4` 色、激活 `brand-text` ×1.5）、透明→`bg-layer-1` 面板（`shadow-lv3`、圆角 16）、30px 行高右对齐 13px/20px 摘要、悬停即开/离开即关、滚动渐隐遮罩、`0.2s cubic-bezier(.4,0,.2,1)` 动效。三方验证：计算样式对齐固件（`test/parity.html`）、官网线上与官方组件并排注入（几何完全重合）、真实指针交互测试。
 
 ### 开发
 
@@ -102,7 +102,7 @@ node --check lib/client.js          # 语法检查（零构建）
 python3 test/make-parity.py         # 从 CSS 重新生成 test/parity.html
 ```
 
-`test/parity.html` 以四张卡片（明/暗 × 兜底值/宿主变量）对官方值做计算样式断言。
+`test/parity.html` 以四张卡片（明/暗 × 折叠/展开）对官方值做计算样式断言。
 
 ## License
 
