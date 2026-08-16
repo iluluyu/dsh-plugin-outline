@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-outline",
   "version": "0.2.1",
-  "description": "Right-edge turn navigation for dsh web, a pixel-faithful reimplementation of chat.deepseek.com's scroll-nav: frosted dash pill, hover outline panel, click to jump",
+  "description": "Right-edge turn navigation for dsh web: one dash per user turn, hover to expand an outline panel, click to jump",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
