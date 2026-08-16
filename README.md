@@ -4,11 +4,15 @@ Right-edge turn navigation for [DeepSeek Harness](https://github.com/deepseek-ai
 
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（dsh）web 端右侧轮次导航——逐像素复刻 chat.deepseek.com 官网自带的 scroll-nav：毛玻璃胶囊内每轮一条横线，悬停展开大纲面板，点击跳转。
 
-| Light | Dark |
-|:---:|:---:|
-| ![light demo](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light.png) | ![dark demo](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark.png) |
+**Light**
 
-*The plugin running inside dsh web (virtual conversation). The rail reproduces the official site component's geometry, tokens and motion exactly. 插件运行于 dsh web 界面（虚拟对话）。导航与官网组件的几何、token、动效完全一致。*
+![light demo](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-light.png)
+
+**Dark**
+
+![dark demo](https://raw.githubusercontent.com/iluluyu/dsh-plugin-outline/main/docs/img/demo-dark.png)
+
+*Screenshots from a real dsh web session (dusk workspace, outline panel pinned open). The rail reproduces the official site component's geometry, tokens and motion exactly. 截图来自真实 dsh web 会话（dusk 工作区，大纲面板固定展开）。导航与官网组件的几何、token、动效完全一致。*
 
 ---
 
