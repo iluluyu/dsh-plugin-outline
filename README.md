@@ -53,6 +53,12 @@ python3 test/make-parity.py     # regenerate style-parity fixture
 | `lib/index.js` | node half (no behavior) |
 | `lib/client.js` | browser half: registers into the `shell.overlay` seat |
 
+## Performance
+
+The rail costs nothing while you read: scroll tracking reads one rect per frame and binary-searches cached turn offsets, refilled only when the conversation DOM changes; streaming reuses unchanged row objects, so a settled outline re-renders nothing; snippets read `textContent`, never the layout-forcing `innerText`.
+
+阅读期间轨道零开销：滚动每帧仅读一次矩形，在缓存的轮次偏移上二分查找，仅当会话 DOM 变化时重填；流式输出时复用未变化的行对象，静止的大纲不产生任何渲染；摘要读取 `textContent`，绝不触发强制重排。
+
 ## License
 
 MIT
