@@ -1,6 +1,6 @@
 {
   "name": "dsh-ui-outline",
-  "version": "0.2.2",
+  "version": "0.0.1",
   "description": "Right-edge turn navigation for dsh web: one dash per user turn, hover to expand an outline panel, click to jump",
   "type": "module",
   "main": "lib/index.js",
