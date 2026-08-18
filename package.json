@@ -1,5 +1,5 @@
 {
-  "name": "dsh-plugin-outline",
+  "name": "dsh-ui-outline",
   "version": "0.2.2",
   "description": "Right-edge turn navigation for dsh web: one dash per user turn, hover to expand an outline panel, click to jump",
   "type": "module",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iluluyu/dsh-plugin-outline.git"
+    "url": "git+https://github.com/iluluyu/dsh-ui-outline.git"
   },
   "dsh": {
     "bundle": {
